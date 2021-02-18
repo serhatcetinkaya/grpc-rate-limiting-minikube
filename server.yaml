@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: grpc-rate-limiting-example-server
-        image: grpc-rate-limiting-example-server:latest
+        image: serhatcetinkaya/grpc-demo-server:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 50005

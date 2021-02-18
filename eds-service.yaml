@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: eds-service
-        image: grpc-rate-limiting-example-eds-server:latest
+        image: serhatcetinkaya/envoy-discovery-service:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
