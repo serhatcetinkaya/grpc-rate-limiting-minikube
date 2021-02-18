@@ -15,11 +15,11 @@ spec:
       containers:
       - name: grpc-rate-limiting-example-server
         image: serhatcetinkaya/grpc-demo-server:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         ports:
         - containerPort: 50005
         env:
-          - name: MY_POD_IP
+          - name: MY_IP
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP

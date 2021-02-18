@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: envoy-proxy
-        image: envoyproxy/envoy:latest
+        image: envoyproxy/envoy:v1.11.1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 10000

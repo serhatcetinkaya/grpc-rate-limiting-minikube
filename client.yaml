@@ -15,7 +15,7 @@ spec:
       containers:
       - name: grpc-rate-limiting-example-client
         image: serhatcetinkaya/grpc-demo-client:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         ports:
         - containerPort: 50005
         args: ["-h", "envoy-proxy.default.svc.cluster.local","-p","10000"]

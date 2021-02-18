@@ -26,6 +26,6 @@ spec:
       containers:
       - name: eds-service
         image: serhatcetinkaya/envoy-discovery-service:latest
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
