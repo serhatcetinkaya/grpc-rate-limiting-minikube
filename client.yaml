@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grpc-rate-limiting-example-client
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: grpc-rate-limiting-example-client
+    spec:
+      containers:
+      - name: grpc-rate-limiting-example-client
+        image: grpc-rate-limiting-example-client:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 50005
+        args: ["-h", "envoy-proxy.default.svc.cluster.local","-p","10000"]

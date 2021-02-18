@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grpc-rate-limiting-example-server
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: grpc-rate-limiting-example-server
+    spec:
+      containers:
+      - name: grpc-rate-limiting-example-server
+        image: grpc-rate-limiting-example-server:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 50005
+        env:
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: EDS_SERVER
+            value: "eds-service.default.svc.cluster.local"
