@@ -15,6 +15,9 @@ metadata:
   name: eds-service
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: eds-service
   template:
     metadata:
       labels:

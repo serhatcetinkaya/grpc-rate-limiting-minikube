@@ -4,6 +4,9 @@ metadata:
   name: grpc-rate-limiting-example-client
 spec:
   replicas: 5
+  selector:
+    matchLabels:
+      app: grpc-rate-limiting-example-client
   template:
     metadata:
       labels:
